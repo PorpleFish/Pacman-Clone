@@ -6,6 +6,18 @@
   <ItemGroup>
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>Game_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Ghost.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Character">
@@ -19,9 +31,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameInstance.h">
-      <Filter>Game_Control</Filter>
-    </ClInclude>
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Node.h">
       <Filter>Map</Filter>
@@ -29,8 +38,17 @@
     <ClInclude Include="Map.h">
       <Filter>Map</Filter>
     </ClInclude>
-    <ClInclude Include="Game_State.h">
+    <ClInclude Include="GameInstance.h">
       <Filter>Game_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Ghost.h">
+      <Filter>Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
