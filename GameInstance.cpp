@@ -64,14 +64,13 @@ void GameInstance::draw(void)
     if (debug_map)
     {
         bool open;
-        // Check if a node overlaps the mouse
+
         Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition(), drawOffset);
         if (hoveredNode != nullptr)
         {
-            std::cout << "NODE X: " << hoveredNode->coord.x << "\n";
+            // Draw the text for that node's index
+            // Draw the text for that node's neighbours
         }
-        // Draw the text for that node's index
-        // Draw the text for that node's neighbours
     }
     rlImGuiEnd();
     EndDrawing();

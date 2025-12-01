@@ -82,8 +82,7 @@
               "RelativeToolTip": "Ghost.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-01T04:00:37.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T04:00:37.989Z"
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "RelativeToolTip": "Ghost.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-01T04:00:30.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T04:00:30.108Z"
             },
             {
               "$type": "Document",
@@ -120,8 +118,7 @@
               "RelativeToolTip": "Player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-01T01:56:50.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T01:56:50.774Z"
             },
             {
               "$type": "Document",
@@ -145,8 +142,7 @@
               "RelativeToolTip": "Node.h",
               "ViewState": "AgIAAAIAAAAAAAAAAAAvwBkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T14:12:35.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T14:12:35.234Z"
             },
             {
               "$type": "Document",
@@ -158,8 +154,7 @@
               "RelativeToolTip": "Map.cpp",
               "ViewState": "AgIAADwAAAAAAAAAAAAewEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-30T14:09:40.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T14:09:40.147Z"
             },
             {
               "$type": "Document",
@@ -171,8 +166,7 @@
               "RelativeToolTip": "Map.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T14:09:37.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T14:09:37.352Z"
             },
             {
               "$type": "Document",
@@ -184,8 +178,7 @@
               "RelativeToolTip": "Player.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-30T13:57:45.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T13:57:45.516Z"
             },
             {
               "$type": "Document",
@@ -195,7 +188,7 @@
               "RelativeDocumentMoniker": "GameInstance.cpp",
               "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\GameInstance.cpp",
               "RelativeToolTip": "GameInstance.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAGEAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-30T11:59:35.462Z",
               "EditorCaption": ""
@@ -210,8 +203,7 @@
               "RelativeToolTip": "GameInstance.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T11:55:34.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T11:55:34.052Z"
             },
             {
               "$type": "Document",
@@ -235,8 +227,7 @@
               "RelativeToolTip": "Character.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-30T11:04:13.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T11:04:13.064Z"
             }
           ]
         },
