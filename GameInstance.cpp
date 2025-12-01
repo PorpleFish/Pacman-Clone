@@ -16,7 +16,7 @@ GameInstance::GameInstance()
 
 bool GameInstance::setup(bool _debug_map, bool _debug_ai)
 {
-    characters.push_back(new Player({14.5 * GRID_UNIT_SIZE, 14.5 * GRID_UNIT_SIZE }));
+    characters.push_back(new Player(currentMap.getNode(34), currentMap.getNode(35)));
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Pacman");

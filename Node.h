@@ -22,6 +22,8 @@ struct Coord {
 	bool operator==(const Coord& lhs) {
 		return x == lhs.x && y == lhs.y;
 	}
+
+	Vector2 getScreenPos();
 };
 
 struct Node {
@@ -33,6 +35,5 @@ struct Node {
 	std::vector<Node*> neighbours;
 
 	void draw(bool hovered, Vector2 drawOffset);
-private:
-	Vector2 coordToScreenSpace(Coord coord);
+	Node* getNeighbour(Direction dir);
 };

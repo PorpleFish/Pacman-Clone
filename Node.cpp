@@ -8,34 +8,63 @@ void Node::draw(bool hovered, Vector2 drawOffset)
 		if (hovered)
 		{
 			DrawLineV(
-				Vector2Add(coordToScreenSpace(coord), tileDrawPosition),
-				Vector2Add(coordToScreenSpace(neighbour->coord), tileDrawPosition),
+				Vector2Add(coord.getScreenPos(), tileDrawPosition),
+				Vector2Add(neighbour->coord.getScreenPos(), tileDrawPosition),
 				RED
 			);
 		}
 		else
 		{
 			DrawLineV(
-				Vector2Add(coordToScreenSpace(coord), tileDrawPosition),
-				Vector2Add(coordToScreenSpace(neighbour->coord), tileDrawPosition),
+				Vector2Add(coord.getScreenPos(), tileDrawPosition),
+				Vector2Add(neighbour->coord.getScreenPos(), tileDrawPosition),
 				DARKPURPLE
 			);
 		}
 	}
 	if (hovered)
 	{
-		DrawCircleV(Vector2Add(coordToScreenSpace(coord), tileDrawPosition), 3, BLUE);
+		DrawCircleV(Vector2Add(coord.getScreenPos(), tileDrawPosition), 3, BLUE);
 	}
 	else
 	{
-		DrawCircleV(Vector2Add(coordToScreenSpace(coord), tileDrawPosition), 3, GREEN);
+		DrawCircleV(Vector2Add(coord.getScreenPos(), tileDrawPosition), 3, GREEN);
 	}
 }
 
-Vector2 Node::coordToScreenSpace(Coord coord)
+Node* Node::getNeighbour(Direction dir)
+{
+	Node* correctNeighbour = nullptr;
+	for (Node* neighbour : neighbours)
+	{
+		if (dir == Direction::UP && neighbour->coord.y < coord.y)
+		{
+			correctNeighbour = neighbour;
+			break;
+		}
+		if (dir == Direction::RIGHT && neighbour->coord.x > coord.x)
+		{
+			correctNeighbour = neighbour;
+			break;
+		}
+		if (dir == Direction::DOWN && neighbour->coord.y > coord.y)
+		{
+			correctNeighbour = neighbour;
+			break;
+		}
+		if (dir == Direction::LEFT && neighbour->coord.x < coord.x)
+		{
+			correctNeighbour = neighbour;
+			break;
+		}
+	}
+	return correctNeighbour;
+}
+
+Vector2 Coord::getScreenPos()
 {
 	return {
-		(float)coord.x * GRID_UNIT_SIZE,
-		(float)coord.y * GRID_UNIT_SIZE
+		(float)x * GRID_UNIT_SIZE,
+		(float)y * GRID_UNIT_SIZE
 	};
-};
+}

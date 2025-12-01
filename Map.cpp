@@ -5,151 +5,219 @@ Map::Map(int level)
 	nodes.push_back(new Node(Coord(1, 4)));
 
 	nodes.push_back(new Node(Coord(1, 9)));
-	nodes[0]->neighbours.push_back(nodes[1]);
-	nodes[1]->neighbours.push_back(nodes[0]);
+	connectNodes(0, 1);
 
 	nodes.push_back(new Node(Coord(6, 4)));
-	nodes[0]->neighbours.push_back(nodes[2]);
-	nodes[2]->neighbours.push_back(nodes[0]);
+	connectNodes(0, 2);
 
 	nodes.push_back(new Node(Coord(1, 12)));
-	nodes[1]->neighbours.push_back(nodes[3]);
-	nodes[3]->neighbours.push_back(nodes[1]);
+	connectNodes(1, 3);
 
 	nodes.push_back(new Node(Coord(12, 4)));
-	nodes[2]->neighbours.push_back(nodes[4]);
-	nodes[4]->neighbours.push_back(nodes[2]);
+	connectNodes(2, 4);
 
 	nodes.push_back(new Node(Coord(6, 9)));
-	nodes[1]->neighbours.push_back(nodes[5]);
-	nodes[5]->neighbours.push_back(nodes[1]);
-
-	nodes[2]->neighbours.push_back(nodes[5]);
-	nodes[5]->neighbours.push_back(nodes[2]);
+	connectNodes(1, 5);
+	connectNodes(2, 5);
 
 	nodes.push_back(new Node(Coord(6, 12)));
-	nodes[6]->neighbours.push_back(nodes[5]);
-	nodes[5]->neighbours.push_back(nodes[6]);
-
-	nodes[6]->neighbours.push_back(nodes[3]);
-	nodes[3]->neighbours.push_back(nodes[6]);
+	connectNodes(5, 6);
+	connectNodes(3, 6);
 
 	nodes.push_back(new Node(Coord(6, 18)));
-	nodes[6]->neighbours.push_back(nodes[7]);
-	nodes[7]->neighbours.push_back(nodes[6]);
+	connectNodes(6, 7);
 
 	nodes.push_back(new Node(Coord(9, 18)));
-	nodes[8]->neighbours.push_back(nodes[7]);
-	nodes[7]->neighbours.push_back(nodes[8]);
+	connectNodes(7, 8);
 
 	nodes.push_back(new Node(Coord(9, 15)));
-	nodes[8]->neighbours.push_back(nodes[9]);
-	nodes[9]->neighbours.push_back(nodes[8]);
+	connectNodes(8, 9);
 
 	nodes.push_back(new Node(Coord(12, 15)));
-	nodes[10]->neighbours.push_back(nodes[9]);
-	nodes[9]->neighbours.push_back(nodes[10]);
+	connectNodes(9, 10);
 
 	nodes.push_back(new Node(Coord(12, 12)));
-	nodes[10]->neighbours.push_back(nodes[11]);
-	nodes[11]->neighbours.push_back(nodes[10]);
+	connectNodes(10, 11);
 
 	nodes.push_back(new Node(Coord(9, 12)));
-	nodes[12]->neighbours.push_back(nodes[11]);
-	nodes[11]->neighbours.push_back(nodes[12]);
+	connectNodes(11, 12);
 
 	nodes.push_back(new Node(Coord(9, 9)));
-	nodes[12]->neighbours.push_back(nodes[13]);
-	nodes[13]->neighbours.push_back(nodes[12]);
-
-	nodes[5]->neighbours.push_back(nodes[13]);
-	nodes[13]->neighbours.push_back(nodes[5]);
+	connectNodes(12, 13);
+	connectNodes(5, 13);
 
 	nodes.push_back(new Node(Coord(12, 9)));
-	nodes[14]->neighbours.push_back(nodes[13]);
-	nodes[13]->neighbours.push_back(nodes[14]);
-
-	nodes[14]->neighbours.push_back(nodes[4]);
-	nodes[4]->neighbours.push_back(nodes[14]);
+	connectNodes(13, 14);
+	connectNodes(4, 14);
 
 	nodes.push_back(new Node(Coord(15, 9)));
-	nodes[14]->neighbours.push_back(nodes[15]);
-	nodes[15]->neighbours.push_back(nodes[14]);
+	connectNodes(14, 15);
 
 	nodes.push_back(new Node(Coord(15, 4)));
-	nodes[16]->neighbours.push_back(nodes[15]);
-	nodes[15]->neighbours.push_back(nodes[16]);
+	connectNodes(15, 16);
 
 	nodes.push_back(new Node(Coord(21, 4)));
-	nodes[16]->neighbours.push_back(nodes[17]);
-	nodes[17]->neighbours.push_back(nodes[16]);
+	connectNodes(16, 17);
 
-	nodes.push_back(new Node(Coord(27, 4)));
-	nodes[18]->neighbours.push_back(nodes[17]);
-	nodes[17]->neighbours.push_back(nodes[18]);
+	nodes.push_back(new Node(Coord(26, 4)));
+	connectNodes(17, 18);
 
 	nodes.push_back(new Node(Coord(21, 9)));
-	nodes[17]->neighbours.push_back(nodes[19]);
-	nodes[19]->neighbours.push_back(nodes[17]);
+	connectNodes(17, 19);
 
-	nodes.push_back(new Node(Coord(27, 9)));
-	nodes[20]->neighbours.push_back(nodes[19]);
-	nodes[19]->neighbours.push_back(nodes[20]);
-
-	nodes[20]->neighbours.push_back(nodes[18]);
-	nodes[18]->neighbours.push_back(nodes[20]);
+	nodes.push_back(new Node(Coord(26, 9)));
+	connectNodes(19, 20);
+	connectNodes(18, 20);
 
 	nodes.push_back(new Node(Coord(18, 9)));
-	nodes[19]->neighbours.push_back(nodes[21]);
-	nodes[21]->neighbours.push_back(nodes[19]);
-
-	nodes[15]->neighbours.push_back(nodes[21]);
-	nodes[21]->neighbours.push_back(nodes[15]);
+	connectNodes(19, 21);
+	connectNodes(15, 21);
 
 	nodes.push_back(new Node(Coord(18, 12)));
-	nodes[22]->neighbours.push_back(nodes[21]);
-	nodes[21]->neighbours.push_back(nodes[22]);
+	connectNodes(21, 22);
 
 	nodes.push_back(new Node(Coord(15, 12)));
-	nodes[22]->neighbours.push_back(nodes[23]);
-	nodes[23]->neighbours.push_back(nodes[22]);
+	connectNodes(22, 23);
 
 	nodes.push_back(new Node(Coord(15, 15)));
-	nodes[24]->neighbours.push_back(nodes[23]);
-	nodes[23]->neighbours.push_back(nodes[24]);
-
-	nodes[24]->neighbours.push_back(nodes[10]);
-	nodes[10]->neighbours.push_back(nodes[24]);
+	connectNodes(23, 24);
+	connectNodes(10, 24);
 
 	nodes.push_back(new Node(Coord(18, 15)));
-	nodes[24]->neighbours.push_back(nodes[25]);
-	nodes[25]->neighbours.push_back(nodes[24]);
+	connectNodes(24, 25);
 
 	nodes.push_back(new Node(Coord(18, 18)));
-	nodes[26]->neighbours.push_back(nodes[25]);
-	nodes[25]->neighbours.push_back(nodes[26]);
+	connectNodes(25, 26);
 
 	nodes.push_back(new Node(Coord(21, 18)));
-	nodes[26]->neighbours.push_back(nodes[27]);
-	nodes[27]->neighbours.push_back(nodes[26]);
+	connectNodes(26, 27);
 
 	nodes.push_back(new Node(Coord(27, 18)));
-	nodes[28]->neighbours.push_back(nodes[27]);
-	nodes[27]->neighbours.push_back(nodes[28]);
+	connectNodes(27, 28);
 
 	nodes.push_back(new Node(Coord(21, 12)));
-	nodes[27]->neighbours.push_back(nodes[29]);
-	nodes[29]->neighbours.push_back(nodes[27]);
+	connectNodes(27, 29);
+	connectNodes(19, 29);
 
-	nodes[19]->neighbours.push_back(nodes[29]);
-	nodes[29]->neighbours.push_back(nodes[19]);
+	nodes.push_back(new Node(Coord(26, 12)));
+	connectNodes(29, 30);
+	connectNodes(20, 30);
 
-	nodes.push_back(new Node(Coord(27, 12)));
-	nodes[30]->neighbours.push_back(nodes[29]);
-	nodes[29]->neighbours.push_back(nodes[30]);
+	nodes.push_back(new Node(Coord(0, 18)));
+	connectNodes(7, 31);
 
-	nodes[30]->neighbours.push_back(nodes[20]);
-	nodes[20]->neighbours.push_back(nodes[30]);
+	nodes.push_back(new Node(Coord(6, 24)));
+	connectNodes(7, 32);
+
+	nodes.push_back(new Node(Coord(9, 24)));
+	connectNodes(32, 33);
+
+	nodes.push_back(new Node(Coord(9, 21)));
+	connectNodes(33, 34);
+	connectNodes(8, 34);
+
+	nodes.push_back(new Node(Coord(18, 21)));
+	connectNodes(34, 35);
+	connectNodes(26, 35);
+
+	nodes.push_back(new Node(Coord(18, 24)));
+	connectNodes(35, 36);
+
+	nodes.push_back(new Node(Coord(21, 24)));
+	connectNodes(36, 37);
+	connectNodes(27, 37);
+
+	nodes.push_back(new Node(Coord(12, 24)));
+	connectNodes(33, 38);
+
+	nodes.push_back(new Node(Coord(12, 27)));
+	connectNodes(38, 39);
+
+	nodes.push_back(new Node(Coord(15, 27)));
+	connectNodes(39, 40);
+
+	nodes.push_back(new Node(Coord(15, 24)));
+	connectNodes(40, 41);
+	connectNodes(36, 41);
+
+	nodes.push_back(new Node(Coord(1, 24)));
+	connectNodes(32, 42);
+
+	nodes.push_back(new Node(Coord(26, 24)));
+	connectNodes(37, 43);
+
+	nodes.push_back(new Node(Coord(1, 27)));
+	connectNodes(42, 44);
+
+	nodes.push_back(new Node(Coord(3, 27)));
+	connectNodes(44, 45);
+
+	nodes.push_back(new Node(Coord(3, 30)));
+	connectNodes(45, 46);
+
+	nodes.push_back(new Node(Coord(1, 30)));
+	connectNodes(46, 47);
+
+	nodes.push_back(new Node(Coord(1, 33)));
+	connectNodes(47, 48);
+
+	nodes.push_back(new Node(Coord(12, 33)));
+	connectNodes(48, 49);
+
+	nodes.push_back(new Node(Coord(15, 33)));
+	connectNodes(49, 50);
+
+	nodes.push_back(new Node(Coord(26, 33)));
+	connectNodes(50, 51);
+
+	nodes.push_back(new Node(Coord(26, 30)));
+	connectNodes(51, 52);
+
+	nodes.push_back(new Node(Coord(24, 30)));
+	connectNodes(52, 53);
+
+	nodes.push_back(new Node(Coord(24, 27)));
+	connectNodes(53, 54);
+
+	nodes.push_back(new Node(Coord(26, 27)));
+	connectNodes(54, 55);
+	connectNodes(43, 55);
+
+	nodes.push_back(new Node(Coord(12, 30)));
+	connectNodes(49, 56);
+
+	nodes.push_back(new Node(Coord(15, 30)));
+	connectNodes(50, 57);
+
+	nodes.push_back(new Node(Coord(9, 30)));
+	connectNodes(56, 58);
+
+	nodes.push_back(new Node(Coord(18, 30)));
+	connectNodes(57, 59);
+
+	nodes.push_back(new Node(Coord(9, 27)));
+	connectNodes(58, 60);
+	connectNodes(39, 60);
+
+	nodes.push_back(new Node(Coord(18, 27)));
+	connectNodes(59, 61);
+	connectNodes(40, 61);
+
+	nodes.push_back(new Node(Coord(6, 27)));
+	connectNodes(60, 62);
+	connectNodes(32, 62);
+
+	nodes.push_back(new Node(Coord(21, 27)));
+	connectNodes(61, 63);
+	connectNodes(37, 63);
+
+	nodes.push_back(new Node(Coord(6, 30)));
+	connectNodes(62, 64);
+	connectNodes(46, 64);
+
+	nodes.push_back(new Node(Coord(21, 30)));
+	connectNodes(63, 65);
+	connectNodes(53, 65);
 
 	return;
 }
@@ -190,4 +258,9 @@ Vector2 Map::coordToScreenSpace(Coord coord)
 		(float) coord.x * GRID_UNIT_SIZE,
 		(float) coord.y * GRID_UNIT_SIZE
 	};
-};
+}
+void Map::connectNodes(int index_a, int index_b)
+{
+	nodes[index_a]->neighbours.push_back(nodes[index_b]);
+	nodes[index_b]->neighbours.push_back(nodes[index_a]);
+}
