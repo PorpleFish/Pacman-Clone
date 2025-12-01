@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "raylib.h"
 #include "raymath.h"
 
 #include "Constants.h"
@@ -30,4 +31,8 @@ struct Node {
 
 	Coord coord;
 	std::vector<Node*> neighbours;
+
+	void draw(bool hovered, Vector2 drawOffset);
+private:
+	Vector2 coordToScreenSpace(Coord coord);
 };

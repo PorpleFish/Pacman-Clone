@@ -1,12 +1,17 @@
 #include "GameInstance.h"
 #include <iostream>
+#include <charconv>
 
 GameInstance::GameInstance()
 {
     currentMap = Map(0);
+
     lastScreenWidth = SCREEN_WIDTH;
     lastScreenHeight = SCREEN_HEIGHT;
+
     drawOffset = {0.0f, 0.0f};
+
+    shouldStayOpen = true;
 }
 
 bool GameInstance::setup(bool _debug_map, bool _debug_ai)
@@ -20,8 +25,9 @@ bool GameInstance::setup(bool _debug_map, bool _debug_ai)
     debug_ai = _debug_ai;
     debug_map = _debug_map;
 
-    if (debug_ai || debug_map) {
-        rlImGuiSetup(true);
+    if (debug_ai || debug_map) 
+    {
+        rlImGuiSetup(false);
     }
 
     return true;
@@ -53,25 +59,81 @@ void GameInstance::draw(void)
     
     for (Char* character : characters) character->draw(drawOffset);
     
-
     if (!debug_ai && !debug_map) {
         EndDrawing();
         return;
     }
-    
+
+    Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition(), drawOffset);
+
     rlImGuiBegin();
-
-    if (debug_map)
+    ImGui::EndFrame();
+    ImGui::NewFrame();
+    if (debug_map && hoveredNode != nullptr)
     {
-        bool open;
+        ImGui::SetNextWindowPos({GetMouseX() + 8.0f, GetMouseY() + 8.0f});
+        ImGui::SetNextWindowSize({ 200.0f, 180.0f });
+        ImGui::SetNextWindowBgAlpha(0.5f);
 
-        Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition(), drawOffset);
-        if (hoveredNode != nullptr)
-        {
-            // Draw the text for that node's index
-            // Draw the text for that node's neighbours
+        if (ImGui::Begin(
+            "Debug Map",
+            nullptr,
+            ImGuiWindowFlags_NoDecoration
+        )) {
+            hoveredNode->draw(true, drawOffset);
+            
+            static ImGuiTableFlags flags = ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg;
+
+            ImGui::SeparatorText("Current Node");
+            
+            if (ImGui::BeginTable("Neighbour Positions", 3, flags))
+            {
+                ImGui::TableSetupColumn("Index");
+                ImGui::TableSetupColumn("X");
+                ImGui::TableSetupColumn("Y");
+                ImGui::TableHeadersRow();
+
+                ImGui::TableNextRow();
+                ImGui::TableSetColumnIndex(0);
+                ImGui::Text(std::to_string(currentMap.getNodeIndex(hoveredNode)).c_str());
+
+                ImGui::TableSetColumnIndex(1);
+                ImGui::Text(std::to_string(hoveredNode->coord.x).c_str());
+
+                ImGui::TableSetColumnIndex(2);
+                ImGui::Text(std::to_string(hoveredNode->coord.y).c_str());
+
+                ImGui::EndTable();
+            }
+
+            ImGui::SeparatorText("Neighbours");
+
+            if (ImGui::BeginTable("Neighbour Positions", 3, flags))
+            {
+                ImGui::TableSetupColumn("Index");
+                ImGui::TableSetupColumn("X");
+                ImGui::TableSetupColumn("Y");
+                ImGui::TableHeadersRow();
+
+                for (Node* neighbour : hoveredNode->neighbours)
+                {
+                    ImGui::TableNextRow();
+                    ImGui::TableSetColumnIndex(0);
+                    ImGui::Text(std::to_string(currentMap.getNodeIndex(neighbour)).c_str());
+
+                    ImGui::TableSetColumnIndex(1);
+                    ImGui::Text(std::to_string(neighbour->coord.x).c_str());
+
+                    ImGui::TableSetColumnIndex(2);
+                    ImGui::Text(std::to_string(neighbour->coord.y).c_str());
+                }
+                ImGui::EndTable();
+            }
         }
+        ImGui::End();
     }
+    ImGui::Render();
+    
     rlImGuiEnd();
     EndDrawing();
 }

@@ -25,8 +25,11 @@ private:
 	void draw(void);
 	void pollInput(void);
 	void handleVariableScreenWidth(void);
+
 	bool debug_map; 
 	bool debug_ai;
+
+	bool shouldStayOpen;
 
 	Map currentMap;
 

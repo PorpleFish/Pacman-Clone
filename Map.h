@@ -11,6 +11,7 @@ public:
 
 	void draw(Vector2 drawOffset);
 	Node* getNodeFromScreenspace(Vector2 screenPosition, Vector2 drawOffset);
+	int getNodeIndex(Node* node);
 private:
 	std::vector<Node*> nodes;
 	Vector2 coordToScreenSpace(Coord coord);
