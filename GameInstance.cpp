@@ -4,6 +4,9 @@
 GameInstance::GameInstance()
 {
     currentMap = Map(0);
+    lastScreenWidth = SCREEN_WIDTH;
+    lastScreenHeight = SCREEN_HEIGHT;
+    drawOffset = {0.0f, 0.0f};
 }
 
 bool GameInstance::setup(bool _debug_map, bool _debug_ai)
@@ -46,9 +49,9 @@ void GameInstance::draw(void)
 
     ClearBackground(BLACK);
 
-    currentMap.draw();
+    currentMap.draw(drawOffset);
     
-    for (Char* character : characters) character->draw();
+    for (Char* character : characters) character->draw(drawOffset);
     
 
     if (!debug_ai && !debug_map) {
@@ -62,7 +65,7 @@ void GameInstance::draw(void)
     {
         bool open;
         // Check if a node overlaps the mouse
-        Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition());
+        Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition(), drawOffset);
         if (hoveredNode != nullptr)
         {
             std::cout << "NODE X: " << hoveredNode->coord.x << "\n";
@@ -91,7 +94,17 @@ void GameInstance::pollInput()
 
 void GameInstance::handleVariableScreenWidth(void)
 {
+    if (lastScreenWidth != GetScreenWidth()) {
+        lastScreenWidth = GetScreenWidth();
+        if (lastScreenWidth > SCREEN_WIDTH) drawOffset.x = (lastScreenWidth - SCREEN_WIDTH) * 0.5f;
+        else drawOffset.x = 0;
+    }
 
+    if (lastScreenHeight != GetScreenHeight()) {
+        lastScreenHeight = GetScreenHeight();
+        if (lastScreenHeight > SCREEN_HEIGHT) drawOffset.y = (lastScreenHeight - SCREEN_HEIGHT) * 0.5f;
+        else drawOffset.y = 0;
+    }
 }
 
 static void cleanUp(void)

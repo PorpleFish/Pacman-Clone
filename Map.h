@@ -9,8 +9,8 @@ public:
 	Map() {};
 	Map(int level);
 
-	void draw();
-	Node* getNodeFromScreenspace(Vector2 screenPosition);
+	void draw(Vector2 drawOffset);
+	Node* getNodeFromScreenspace(Vector2 screenPosition, Vector2 drawOffset);
 private:
 	std::vector<Node*> nodes;
 	Vector2 coordToScreenSpace(Coord coord);

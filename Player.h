@@ -23,7 +23,7 @@ public:
 	};
 
 	void update(float delta) override;
-	void draw(void) override;
+	void draw(Vector2 drawOffset) override;
 
 	void inputDirectionHandler(Direction newInput, int inputBufferFrames);
 

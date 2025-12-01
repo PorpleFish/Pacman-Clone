@@ -13,7 +13,7 @@ public:
 	Char(float _baseSpeed, std::string _name, Vector2 _pos) 
 		: baseSpeed(_baseSpeed), name(_name), pos(_pos) {};
 
-	virtual void draw(void) {};
+	virtual void draw(Vector2 drawOffset) {};
 	virtual void update(float delta) {};
 
 	// Static:

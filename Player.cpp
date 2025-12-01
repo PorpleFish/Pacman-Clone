@@ -32,9 +32,9 @@ void Player::update(float delta)
 	}
 }
 
-void Player::draw()
+void Player::draw(Vector2 drawOffset)
 {
-	DrawCircleV(pos, 11.0f, YELLOW);
+	DrawCircleV(Vector2Add(pos, drawOffset), 11.0f, YELLOW);
 }
 
 void Player::inputDirectionHandler(Direction newInput, int inputBufferFrames)

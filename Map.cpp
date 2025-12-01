@@ -65,26 +65,26 @@ Map::Map(int level)
 	return;
 }
 
-void Map::draw() 
+void Map::draw(Vector2 drawOffset)
 {
 	for (Node* node : nodes) {
 		for (Node* neighbour : node->neighbours)
 		{
 			DrawLineV(
-				coordToScreenSpace(node->coord),
-				coordToScreenSpace(neighbour->coord),
+				Vector2Add(coordToScreenSpace(node->coord), drawOffset),
+				Vector2Add(coordToScreenSpace(neighbour->coord), drawOffset),
 				DARKPURPLE
 			);
 		}
-		DrawCircleV(coordToScreenSpace(node->coord), 3, GREEN);
+		DrawCircleV(Vector2Add(coordToScreenSpace(node->coord), drawOffset), 3, GREEN);
 	}
 }
 
-Node* Map::getNodeFromScreenspace(Vector2 screenPosition)
+Node* Map::getNodeFromScreenspace(Vector2 screenPosition, Vector2 drawOffset)
 {
 	Coord coordToCheck = Coord(
-		(int)screenPosition.x / GRID_UNIT_SIZE,
-		(int)screenPosition.y / GRID_UNIT_SIZE
+		((int)screenPosition.x - drawOffset.x) / GRID_UNIT_SIZE,
+		((int)screenPosition.y - drawOffset.y) / GRID_UNIT_SIZE
 	);
 
 	for (Node* node : nodes)

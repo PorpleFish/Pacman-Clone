@@ -21,14 +21,18 @@ public:
 	void run();
 
 private:
-	Map currentMap;
-
-	std::vector<Char*> characters;
-
 	void update(float delta);
 	void draw(void);
 	void pollInput(void);
 	void handleVariableScreenWidth(void);
 	bool debug_map; 
 	bool debug_ai;
+
+	Map currentMap;
+
+	std::vector<Char*> characters;
+
+	int lastScreenWidth;
+	int lastScreenHeight;
+	Vector2 drawOffset;
 };

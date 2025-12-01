@@ -29,6 +29,9 @@
     <Filter Include="Game_Control">
       <UniqueIdentifier>{7406e2aa-602c-4f47-a613-8cb86a54a649}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{b4b0ff48-b562-4aa4-9ac6-c8d0831d3dd5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
