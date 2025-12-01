@@ -5,56 +5,43 @@ void Player::update(float delta)
 {
 	float speed = baseSpeed * delta;
 
-	if (inputDirection != movementDirection)
-	{
+	if (inputBuffer > 0)
 		inputBuffer--;
-		if (inputBuffer <= 0) {
-			inputDirection = movementDirection;
-		}
+	else 
+		inputDirection = movementDirection;
 
-		if (fabs(distanceToNode) < speed)
-		{
-			movementDirection = inputDirection;
-
-			Node* nextNode;
-			nextNode = currentNode->getNeighbour(movementDirection);
-
-			if (nextNode != nullptr)
-			{
-				previousNode = currentNode;
-				currentNode = nextNode;
-				distanceToNode = Vector2Distance(
-					previousNode->coord.getScreenPos(), 
-					currentNode->coord.getScreenPos()
-				);
-				state = PlayerState::MOVING;
-			}
-		}
-	}
-
-	if (state == PlayerState::MOVING)
+	switch (state)
+	{
+	case PlayerState::MOVING:
 	{
 		distanceToNode -= speed;
 
-		if (distanceToNode < speed)
+		if (distanceToNode < speed) // this means we're close to a node!
 		{
-			Node* nextNode;
-			nextNode = currentNode->getNeighbour(movementDirection);
-			if (nextNode != nullptr && nextNode != currentNode)
+			if (inputBuffer > 0)
 			{
-				previousNode = currentNode;
-				currentNode = nextNode;
-				distanceToNode = Vector2Distance(
-					previousNode->coord.getScreenPos(),
-					currentNode->coord.getScreenPos()
-				);
+				if (tryTurnInDirection(inputDirection)) movementDirection = inputDirection;
 			}
 			else
 			{
-				state = PlayerState::STUCK;
+				if (!tryTurnInDirection(movementDirection))
+				{
+					state = PlayerState::STUCK;
+				}
 			}
 		}
+		break;
 	}
+	case PlayerState::STUCK:
+	{
+		if (inputBuffer > 0 && tryTurnInDirection(inputDirection))
+		{
+			movementDirection = inputDirection;
+			state = PlayerState::MOVING;
+		}
+		break;
+	}
+	};
 }
 
 void Player::draw(Vector2 drawOffset)
@@ -86,4 +73,20 @@ void Player::inputDirectionHandler(Direction newInput, int inputBufferFrames)
 {
 	inputDirection = newInput;
 	inputBuffer = inputBufferFrames;
+
+	if (
+		inputDirection == Direction::UP && movementDirection == Direction::DOWN ||
+		inputDirection == Direction::RIGHT && movementDirection == Direction::LEFT ||
+		inputDirection == Direction::DOWN && movementDirection == Direction::UP ||
+		inputDirection == Direction::LEFT && movementDirection == Direction::RIGHT
+		)
+	{
+		movementDirection = inputDirection;
+		std::swap(previousNode, currentNode);
+
+		distanceToNode = Vector2Distance(
+			previousNode->coord.getScreenPos(),
+			currentNode->coord.getScreenPos()
+		) - distanceToNode;
+	}
 }

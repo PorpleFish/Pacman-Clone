@@ -10,11 +10,18 @@ class Char {
 public:
 	Char() {};
 
-	Char(float _baseSpeed, std::string _name, Node* _previousNode, Node* _currentNode, float _distanceToNode)
-		: baseSpeed(_baseSpeed), name(_name), previousNode(_previousNode), currentNode(_currentNode), distanceToNode(_distanceToNode) {};
-
-	virtual void draw(Vector2 drawOffset) {};
-	virtual void update(float delta) {};
+	Char(float _baseSpeed, 
+		std::string _name, 
+		Node* _previousNode, 
+		Node* _currentNode, 
+		float _distanceToNode
+	) : 
+		baseSpeed(_baseSpeed), 
+		name(_name), 
+		previousNode(_previousNode), 
+		currentNode(_currentNode), 
+		distanceToNode(_distanceToNode) 
+	{};
 
 	// Static:
 	float baseSpeed;
@@ -24,4 +31,9 @@ public:
 	Node* currentNode;
 	Node* previousNode;
 	float distanceToNode;
+
+	virtual void draw(Vector2 drawOffset) {};
+	virtual void update(float delta) {};
+
+	bool tryTurnInDirection(Direction targetDirection);
 };

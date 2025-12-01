@@ -4,8 +4,6 @@
 
 GameInstance::GameInstance()
 {
-    currentMap = Map(0);
-
     lastScreenWidth = SCREEN_WIDTH;
     lastScreenHeight = SCREEN_HEIGHT;
 
@@ -16,14 +14,16 @@ GameInstance::GameInstance()
 
 bool GameInstance::setup(bool _debug_map, bool _debug_ai)
 {
-    characters.push_back(new Player(currentMap.getNode(34), currentMap.getNode(35)));
-
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Pacman");
+   
     SetTargetFPS(60);
 
     debug_ai = _debug_ai;
     debug_map = _debug_map;
+
+    currentMap = Map(0);
+    characters.push_back(new Player(currentMap.getNode(34), currentMap.getNode(35)));
 
     if (debug_ai || debug_map) 
     {
@@ -55,8 +55,8 @@ void GameInstance::draw(void)
 
     ClearBackground(BLACK);
 
-    currentMap.draw(drawOffset);
-    
+    currentMap.draw(drawOffset, debug_map);
+
     for (Char* character : characters) character->draw(drawOffset);
     
     if (!debug_ai && !debug_map) {
@@ -65,7 +65,6 @@ void GameInstance::draw(void)
     }
 
     Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition(), drawOffset);
-
     rlImGuiBegin();
     ImGui::EndFrame();
     ImGui::NewFrame();
