@@ -6,9 +6,6 @@
   <ItemGroup>
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="GameInstance.cpp">
-      <Filter>Game_Control</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
@@ -17,6 +14,9 @@
     </ClCompile>
     <ClCompile Include="Ghost.cpp">
       <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>Game_Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

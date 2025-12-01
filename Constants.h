@@ -14,8 +14,3 @@ enum class Direction {
 	DOWN =  3,
 	LEFT =  4
 };
-
-struct Coord {
-	int x;
-	int y;
-};

@@ -3,16 +3,23 @@
 
 GameInstance::GameInstance()
 {
-    currentMap = Map();
+    currentMap = Map(0);
 }
 
-bool GameInstance::setup(bool debug_map, bool debug_ai)
+bool GameInstance::setup(bool _debug_map, bool _debug_ai)
 {
     characters.push_back(new Player({14.5 * GRID_UNIT_SIZE, 14.5 * GRID_UNIT_SIZE }));
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Pacman");
     SetTargetFPS(60);
+
+    debug_ai = _debug_ai;
+    debug_map = _debug_map;
+
+    if (debug_ai || debug_map) {
+        rlImGuiSetup(true);
+    }
 
     return true;
 }
@@ -44,6 +51,26 @@ void GameInstance::draw(void)
     for (Char* character : characters) character->draw();
     
 
+    if (!debug_ai && !debug_map) {
+        EndDrawing();
+        return;
+    }
+    
+    rlImGuiBegin();
+
+    if (debug_map)
+    {
+        bool open;
+        // Check if a node overlaps the mouse
+        Node* hoveredNode = currentMap.getNodeFromScreenspace(GetMousePosition());
+        if (hoveredNode != nullptr)
+        {
+            std::cout << "NODE X: " << hoveredNode->coord.x << "\n";
+        }
+        // Draw the text for that node's index
+        // Draw the text for that node's neighbours
+    }
+    rlImGuiEnd();
     EndDrawing();
 }
 
@@ -69,5 +96,5 @@ void GameInstance::handleVariableScreenWidth(void)
 
 static void cleanUp(void)
 {
-
+    rlImGuiShutdown();
 }
