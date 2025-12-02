@@ -5,12 +5,16 @@
     {
       "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\GameInstance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:GameInstance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 159,
       "DocumentGroups": [
         {
           "DockedWidth": 260,
@@ -28,8 +32,21 @@
         },
         {
           "DockedWidth": 4,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameInstance.cpp",
+              "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\GameInstance.cpp",
+              "RelativeDocumentMoniker": "GameInstance.cpp",
+              "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\GameInstance.cpp",
+              "RelativeToolTip": "GameInstance.cpp",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-01T15:13:17.759Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -38,14 +55,10 @@
               "RelativeDocumentMoniker": "Player.cpp",
               "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Player.cpp",
               "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAwFkAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-01T14:56:35.774Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{68487888-204a-11d3-87eb-00c04f7971a5}"
             }
           ]
         }

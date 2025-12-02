@@ -37,9 +37,9 @@ void GameInstance::run()
 {
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
-        update(GetFrameTime());
         draw();
         pollInput();
+        update(GetFrameTime());
         handleVariableScreenWidth();
     }
 }
