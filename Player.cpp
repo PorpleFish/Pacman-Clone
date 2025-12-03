@@ -15,49 +15,19 @@ void Player::update(float delta)
 	{
 		distanceToNode -= speed;
 
-		if (distanceToNode < speed) // this means we're close to a node!
+		if (distanceToNode < speed)
 		{
-			// if the player is trying to move in another direction:
-			if (inputBuffer > 0)
+			if (currentNode->getNeighbour(inputDirection) != nullptr)
 			{
-				if (currentNode->getNeighbour(inputDirection) != nullptr)
-				{
-					if (tryTurnInDirection(inputDirection)) {
-						movementDirection = inputDirection;
-						inputBuffer = 0;
-					};
-				}
-				else
-				{
-					inputDirection = movementDirection;
-					inputBuffer = 0;
-
-					previousNode = currentNode;
-					currentNode = currentNode->getNeighbour(movementDirection);
-
-					distanceToNode = Vector2Distance(
-						previousNode->coord.getScreenPos(),
-						currentNode->coord.getScreenPos()
-					);
-				}
+				tryTurnInDirection(inputDirection);
+				movementDirection = inputDirection;
+				inputBuffer = 0;
 			}
 			
 			else if(currentNode->getNeighbour(movementDirection) == nullptr)
 			{
 				state = PlayerState::STUCK;
 			}
-
-			else 
-			{
-				previousNode = currentNode;
-				currentNode = currentNode->getNeighbour(movementDirection);
-
-				distanceToNode = Vector2Distance(
-					previousNode->coord.getScreenPos(),
-					currentNode->coord.getScreenPos()
-				);
-			}
-
 		}
 		break;
 	}
