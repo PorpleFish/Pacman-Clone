@@ -36,4 +36,5 @@ struct Node {
 
 	void draw(bool hovered, Vector2 drawOffset);
 	Node* getNeighbour(Direction dir);
+	Node*
 };

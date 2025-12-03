@@ -1,6 +1,6 @@
 #include "Character.h"
 
-bool Char::tryTurnInDirection(Direction targetDirection)
+bool Char::tryStartMovingToNode(Direction targetDirection)
 {
 	Node* nextNode;
 	nextNode = currentNode->getNeighbour(targetDirection);

@@ -35,5 +35,5 @@ public:
 	virtual void draw(Vector2 drawOffset) {};
 	virtual void update(float delta) {};
 
-	bool tryTurnInDirection(Direction targetDirection);
+	bool tryStartMovingToNode(Direction targetDirection);
 };

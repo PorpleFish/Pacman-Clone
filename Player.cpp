@@ -19,23 +19,27 @@ void Player::update(float delta)
 		{
 			if (currentNode->getNeighbour(inputDirection) != nullptr)
 			{
-				tryTurnInDirection(inputDirection);
+				tryStartMovingToNode(inputDirection);
 				movementDirection = inputDirection;
 				inputBuffer = 0;
+				break;
 			}
 			
-			else if(currentNode->getNeighbour(movementDirection) == nullptr)
+			if(currentNode->getNeighbour(movementDirection) == nullptr)
 			{
 				state = PlayerState::STUCK;
+			}
+			else
+			{
+				tryStartMovingToNode(movementDirection);
 			}
 		}
 		break;
 	}
 	case PlayerState::STUCK:
 	{
-		if (inputBuffer > 0 && tryTurnInDirection(inputDirection))
+		if (inputBuffer > 0 && tryStartMovingToNode(inputDirection))
 		{
-			std::cout << "dafasd";
 			movementDirection = inputDirection;
 			state = PlayerState::MOVING;
 		}
