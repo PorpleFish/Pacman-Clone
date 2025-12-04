@@ -7,6 +7,22 @@
       "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\GameInstance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0E196876-F16F-4AA5-A859-540863D9EAC0}|Pacman.vcxproj|solutionrelative:GameInstance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -30,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 260,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Character.cpp",
+              "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Character.cpp",
+              "RelativeDocumentMoniker": "Character.cpp",
+              "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Character.cpp",
+              "RelativeToolTip": "Character.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-04T15:02:28.476Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -42,7 +71,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Character.h",
+              "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Character.h",
+              "RelativeDocumentMoniker": "Character.h",
+              "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Character.h",
+              "RelativeToolTip": "Character.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-04T05:53:59.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Player.h",
+              "RelativeDocumentMoniker": "Player.h",
+              "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Player.h",
+              "RelativeToolTip": "Player.h",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-04T05:54:00.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Map.cpp",
+              "RelativeDocumentMoniker": "Map.cpp",
+              "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Map.cpp",
+              "RelativeToolTip": "Map.cpp",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAF4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-04T01:29:51.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Node.h",
               "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Node.h",
               "RelativeDocumentMoniker": "Node.h",
@@ -50,12 +116,11 @@
               "RelativeToolTip": "Node.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-04T01:08:39.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T01:08:39.144Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Node.cpp",
               "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Node.cpp",
               "RelativeDocumentMoniker": "Node.cpp",
@@ -63,12 +128,11 @@
               "RelativeToolTip": "Node.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-04T01:08:36.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T01:08:36.322Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Constants.h",
               "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Constants.h",
               "RelativeDocumentMoniker": "Constants.h",
@@ -76,8 +140,7 @@
               "RelativeToolTip": "Constants.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-04T01:05:13.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T01:05:13.906Z"
             },
             {
               "$type": "Document",
@@ -87,14 +150,14 @@
               "RelativeDocumentMoniker": "Player.cpp",
               "ToolTip": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\Player.cpp",
               "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAACcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAHYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-03T05:40:23.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "GameInstance.cpp",
               "DocumentMoniker": "C:\\Projects\\003_RayLibLearning\\06_Pacman_02\\Pacman\\GameInstance.cpp",
               "RelativeDocumentMoniker": "GameInstance.cpp",
@@ -102,8 +165,7 @@
               "RelativeToolTip": "GameInstance.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-03T05:40:19.628Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T05:40:19.628Z"
             }
           ]
         }

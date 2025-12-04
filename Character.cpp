@@ -13,6 +13,7 @@ bool Char::tryStartMovingToNode(Direction targetDirection)
 			previousNode->coord.getScreenPos(),
 			currentNode->coord.getScreenPos()
 		);
+		
 		return true;
 	}
 	return false;
