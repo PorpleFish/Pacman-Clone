@@ -20,7 +20,9 @@
     <ClCompile Include="Node.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Character.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Character">

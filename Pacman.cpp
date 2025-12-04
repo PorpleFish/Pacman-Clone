@@ -3,7 +3,7 @@
 int main()
 {
     GameInstance game = GameInstance();
-    if (game.setup(false, false)) {
+    if (game.setup(true, false)) {
         game.run();
     }
     return 0;

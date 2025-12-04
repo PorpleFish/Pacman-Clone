@@ -108,6 +108,8 @@ Map::Map(int level)
 
 		nodes.push_back(new Node(Coord(0, 18)));
 		connectNodes(7, 31);
+		nodes[31]->warpNodeTarget = nodes[28];
+		nodes[28]->warpNodeTarget = nodes[31];
 
 		nodes.push_back(new Node(Coord(6, 24)));
 		connectNodes(7, 32);

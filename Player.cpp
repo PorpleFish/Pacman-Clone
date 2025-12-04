@@ -24,6 +24,18 @@ void Player::update(float delta)
 				inputBuffer = 0;
 				break;
 			}
+
+			if (currentNode->warpNodeTarget != nullptr)
+			{
+				previousNode = currentNode->warpNodeTarget;
+				currentNode = previousNode->getNeighbour(movementDirection);
+
+				distanceToNode = Vector2Distance(
+					previousNode->coord.getScreenPos(),
+					currentNode->coord.getScreenPos()
+				);
+				break;
+			}
 			
 			if(currentNode->getNeighbour(movementDirection) == nullptr)
 			{

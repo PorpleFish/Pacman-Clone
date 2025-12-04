@@ -29,12 +29,14 @@ struct Coord {
 struct Node {
 	Node() {}
 	Node(Coord placement) : 
-		coord(placement) {};
+		coord(placement),
+		warpNodeTarget(nullptr)
+	{};
 
 	Coord coord;
 	std::vector<Node*> neighbours;
+	Node* warpNodeTarget;
 
 	void draw(bool hovered, Vector2 drawOffset);
 	Node* getNeighbour(Direction dir);
-	Node*
 };
